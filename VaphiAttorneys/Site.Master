@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="VaphiAttorneys.SiteMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body{font-family:'Segoe UI';}
+        .navbar-vaphi{background:#0A1931; padding:12px;}
+        .navbar-vaphi .navbar-brand{color:#C5A880 !important; font-weight:700; letter-spacing:1px;}
+        .navbar-vaphi a{color:white !important;}
+    </style>
+</head>
+<body>
+<form runat="server">
+    <nav class="navbar navbar-vaphi">
+        <a class="navbar-brand" href="MyPages/Dashboard.aspx">
+            <span style="color:#C5A880;">⚖️ VAPI ATTORNEYS</span> <small style="font-size:10px; color:white;">ATTORNEYS AT LAW</small>
+        </a>
+  <div style="float:right; color:white; padding-top:5px;">
+     <span style="margin-right:15px; color:#C5A880;">Welcome, <%= Session["Username"] %></span>
+     <span id="clock" style="margin-right:20px; color:#ddb78f; font-weight:bold;"></span>
+     <a href="<%: ResolveUrl("~/MyPages/Dashboard.aspx") %>" style="color:#C5A880; margin-left:20px;">Dashboard</a>
+     <a href="<%: ResolveUrl("~/MyPages/Clients.aspx") %>" style="color:white; margin-left:15px;">Clients</a>
+     <a href="<%: ResolveUrl("~/MyPages/Cases.aspx") %>" style="color:white; margin-left:15px;">Cases</a>
+     <a href="<%: ResolveUrl("~/MyPages/Logout.aspx") %>" style="border:1px solid #C5A880; padding:5px 12px; border-radius:6px; color:#C5A880; text-decoration:none; margin-left:15px;">Logout</a>
+  </div>
+
+    </nav>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+</form>
+<script>
+function updateClock(){
+ var c=document.getElementById('clock');
+ if(c){ c.innerHTML = new Date().toLocaleString('en-ZA',{weekday:'short', year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit'}); }
+}
+setInterval(updateClock,1000); updateClock();
+</script>
+</body>
+</html>
