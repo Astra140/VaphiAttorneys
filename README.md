@@ -1,7 +1,19 @@
-# VaphiAttorneys - Option 2
-Law firm case management system
-- Dashboard with Open 4 / Closed 1 cases
-- Client and Case management
-- ASP.NET MVC C#
-GitHub: https://github.com/Astra140/VaphiAttorneys
-Student: Astra140
+# Vaphi Attorneys - Case Management System
+
+Law firm management portal for Vaphi Attorneys.
+
+Features:
+- Secure Login & Role Management
+- Dashboard: Total / Open / Closed cases + Court Roll
+- Clients & Cases CRUD
+- Calendar & Case Details
+
+Tech Stack: ASP.NET Web Forms (C#), SQL Server (App_Data), Bootstrap
+
+Setup:
+1. Open VaphiAttorneys.sln in Visual Studio 2022
+2. Run (F5) - database auto-attaches from App_Data
+3. Default login: admin / admin123
+
+Client: Vaphi Attorneys
+Developer: Astra140
